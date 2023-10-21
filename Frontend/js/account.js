@@ -17,7 +17,7 @@ var size = 5;
 
 // get List
 function getListAccounts() {
-    var url = "http://localhost:8080/api/v1/accounts";
+    var url = "http://localhost:9091/api/v1/accounts";
 
     // paging
     url += '?page=' + currentPage + '&size=' + size;
@@ -157,7 +157,7 @@ function addAccount() {
 
     // validate unique name
     $.ajax({
-        url: "http://localhost:8080/api/v1/accounts/username/" + username + "/exists",
+        url: "http://localhost:9091/api/v1/accounts/username/" + username + "/exists",
         type: 'GET',
         contentType: "application/json",
         dataType: 'json', // datatype return
@@ -178,7 +178,7 @@ function addAccount() {
                 };
 
                 $.ajax({
-                    url: 'http://localhost:8080/api/v1/accounts',
+                    url: 'http://localhost:9091/api/v1/accounts',
                     type: 'POST',
                     data: JSON.stringify(account), // body
                     contentType: "application/json", // type of body (json, xml, text)
@@ -237,7 +237,7 @@ function deleteAllAccounts(ids) {
     if (result) {
         // call API
         $.ajax({
-            url: 'http://localhost:8080/api/v1/accounts?ids=' + ids,
+            url: 'http://localhost:9091/api/v1/accounts?ids=' + ids,
             type: 'DELETE',
             beforeSend: function (xhr) {
                 xhr.setRequestHeader("Authorization", "Basic " + btoa(storage.getItem("USERNAME") + ":" + storage.getItem("PASSWORD")));
@@ -296,7 +296,7 @@ function deleteAccount(id) {
     // TODO validate
 
     $.ajax({
-        url: 'http://localhost:8080/api/v1/accounts/' + id,
+        url: 'http://localhost:9091/api/v1/accounts/' + id,
         type: 'DELETE',
         beforeSend: function (xhr) {
             xhr.setRequestHeader("Authorization", "Basic " + btoa(storage.getItem("USERNAME") + ":" + storage.getItem("PASSWORD")));

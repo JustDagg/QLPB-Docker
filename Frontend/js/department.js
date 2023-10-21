@@ -16,7 +16,7 @@ var maxCreateDate = "";
 
 function getListDepartments() {
 
-    var url = "http://localhost:8080/api/v1/departments";
+    var url = "http://localhost:9091/api/v1/departments";
 
     url += "?page=" + currentPage + "&size=" + size;
 
@@ -303,7 +303,7 @@ function addDepartment() {
 
     // validate unique name
     $.ajax({
-        url: "http://localhost:8080/api/v1/departments/name/" + name + "/exists",
+        url: "http://localhost:9091/api/v1/departments/name/" + name + "/exists",
         type: 'GET',
         contentType: "application/json",
         dataType: 'json', // datatype return
@@ -322,7 +322,7 @@ function addDepartment() {
                 };
 
                 $.ajax({
-                    url: 'http://localhost:8080/api/v1/departments',
+                    url: 'http://localhost:9091/api/v1/departments',
                     type: 'POST',
                     data: JSON.stringify(department), // body
                     contentType: "application/json", // type of body (json, xml, text)
@@ -370,7 +370,7 @@ function openUpdateModal(id) {
 
     // call API from server
     $.ajax({
-        url: "http://localhost:8080/api/v1/departments/" + id,
+        url: "http://localhost:9091/api/v1/departments/" + id,
         type: 'GET',
         contentType: "application/json",
         dataType: 'json', // datatype return
@@ -431,7 +431,7 @@ function updateDepartment() {
 
     // validate unique name
     $.ajax({
-        url: "http://localhost:8080/api/v1/departments/name/" + name + "/exists",
+        url: "http://localhost:9091/api/v1/departments/name/" + name + "/exists",
         type: 'GET',
         contentType: "application/json",
         dataType: 'json', // datatype return
@@ -449,7 +449,7 @@ function updateDepartment() {
                 };
 
                 $.ajax({
-                    url: 'http://localhost:8080/api/v1/departments/' + id,
+                    url: 'http://localhost:9091/api/v1/departments/' + id,
                     type: 'PUT',
                     data: JSON.stringify(department), // body
                     contentType: "application/json", // type of body (json, xml, text)
@@ -497,7 +497,7 @@ function deleteDepartment(id) {
     // TODO validate
 
     $.ajax({
-        url: 'http://localhost:8080/api/v1/departments/' + id,
+        url: 'http://localhost:9091/api/v1/departments/' + id,
         type: 'DELETE',
         beforeSend: function (xhr) {
             xhr.setRequestHeader("Authorization", "Basic " + btoa(storage.getItem("USERNAME") + ":" + storage.getItem("PASSWORD")));
@@ -577,7 +577,7 @@ function deleteAllDepartment() {
     if (result) {
         // call API
         $.ajax({
-            url: 'http://localhost:8080/api/v1/departments?ids=' + ids,
+            url: 'http://localhost:9091/api/v1/departments?ids=' + ids,
             type: 'DELETE',
             beforeSend: function (xhr) {
                 xhr.setRequestHeader("Authorization", "Basic " + btoa(storage.getItem("USERNAME") + ":" + storage.getItem("PASSWORD")));

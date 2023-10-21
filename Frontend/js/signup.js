@@ -50,7 +50,7 @@ function signup() {
                 };
 
                 $.ajax({
-                    url: 'http://localhost:8080/api/v1/signup',
+                    url: 'http://localhost:9091/api/v1/signup',
                     type: 'POST',
                     data: JSON.stringify(account), // body
                     contentType: "application/json", // type of body (json, xml, text)

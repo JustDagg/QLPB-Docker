@@ -29,7 +29,7 @@ function login() {
 
     // Call API
     $.ajax({
-        url: 'http://localhost:8080/api/v1/login',
+        url: 'http://localhost:9091/api/v1/login',
         type: 'GET',
         contentType: "application/json",
         dataType: 'json', // datatype return
@@ -78,7 +78,7 @@ function hideNameErrorMessage() {
 function facebook() {
 
     $.ajax({
-        url: "http://localhost:8080/auth/facebook",
+        url: "http://localhost:9091/auth/facebook",
         type: 'GET',
         contentType: "application/json",
         dataType: 'json', // datatype return
