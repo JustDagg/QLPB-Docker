@@ -2,9 +2,9 @@
 Back-end(Springboot) - Database(MySQL) - Front-end(Html, Css, JS) - Docker Back-end
 
 #Docker
-MYSQL (springmysqlqlpbdocker)
-tk: root
-mk: root
+- MYSQL (springmysqlqlpbdocker)
+	+tk: root
+	+mk: root
 
 - cmd:
 	docker images
