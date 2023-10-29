@@ -1,4 +1,4 @@
-# QLPB-Docker
+# Quan-ly-phong-ban (Project)
 Back-end(Springboot) - Database(MySQL) - Front-end(Html, Css, JS) - Docker Back-end
 
 #Docker
