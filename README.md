@@ -1,11 +1,11 @@
 # Quan-ly-phong-ban (Project)
-## Back-end(Springboot) - Database(MySQL) - Front-end(Html, Css, JS) - Docker Back-end
+## Back-end(Springboot) - Database(MySQL) - Front-end(HTML, CSS, JS) - Docker Back-end
 
 ### Docker config
 - `MYSQL (springmysqlqlpbdocker)`
 ```bash
-	+tk: root
-	+mk: root
+	tk: root
+	mk: root
 ```
 
 - `cmd:`
